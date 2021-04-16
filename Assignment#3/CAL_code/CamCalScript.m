@@ -4,7 +4,7 @@ close all;
 
 IMG_NAME = 'images/image001.jpg';
 img_I = imread(IMG_NAME);
-image(img);
+image(img_I);
 %axis off
 axis image
 
@@ -20,7 +20,8 @@ D_type = 'QR';
 %point.
 %You don't have to do this all the time, just store the resulting xy and
 %XYZ matrices and use them as input for your algorithms.
-[xy XYZ] = getpoints(IMG_NAME);
+xy=dlmread(' xy.txt ')
+XYZ=dlmread('XYZ.txt')
 
 % === Task 2 DLT algorithm ===
 
