@@ -1,5 +1,8 @@
 function [xy XYZ] = getpoints(img)
-
+img='images/image001.jpg'
+imagem=imread(img);
+figure;imshow(imagem)
+hold on
 % Initially, the list of points is empty.
 xy = [];
 XYZ = [];
@@ -20,7 +23,9 @@ while but == 1
     input = inputdlg('[X Y Z]'); % show input dialog
     XYZi = str2num(input{1}); % convert to number
     XYZ(:, n) = XYZi; % add a new column with the current values
-    
-    %% COMENTARIO
 end
+dlmwrite (' xy.txt ',xy);
+dlmwrite('XYZ.txt',XYZ);
+
+
 end
