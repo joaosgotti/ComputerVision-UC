@@ -20,5 +20,7 @@ while but == 1
     input = inputdlg('[X Y Z]'); % show input dialog
     XYZi = str2num(input{1}); % convert to number
     XYZ(:, n) = XYZi; % add a new column with the current values
+    
+    %% COMENTARIO
 end
 end
