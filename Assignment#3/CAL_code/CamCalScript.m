@@ -1,6 +1,4 @@
-% Exervice 3
-%
-close all;
+clear all, clc, close all;
 
 IMG_NAME = 'images/image001.jpg';
 img_I = imread(IMG_NAME);
