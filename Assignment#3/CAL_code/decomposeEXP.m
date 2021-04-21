@@ -1,9 +1,11 @@
-function [ K, R, C ] = decomposeEXP(P)
+function [ K, R, C ] = decomposeEXP(M)
 % f = distância focal
-
-
 alfa = Kx * f;
-beta = Ky * f;
+
+A= M(1:3,1:3);
+b=M(:,end);
+C=-A\b;
+
 
 
 

@@ -24,7 +24,7 @@ while but == 1
     XYZi = str2num(input{1}); % convert to number
     XYZ(:, n) = XYZi; % add a new column with the current values
 end
-dlmwrite (' xy.txt ',xy);
+dlmwrite ('xy.txt',xy);
 dlmwrite('XYZ.txt',XYZ);
 
 

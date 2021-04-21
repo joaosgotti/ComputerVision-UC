@@ -6,7 +6,7 @@ K = inv(K_invertido);
 R = inv(R_invertido);
 
 [~,~,V] = svd(P);
-C = V(:,end); %translation
+C = V(:,end); %
 
 % C = center
 % R = rotation

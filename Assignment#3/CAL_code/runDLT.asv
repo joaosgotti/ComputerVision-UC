@@ -8,14 +8,7 @@ function [K, R, t, error] = runDLT(xy, XYZ, Dtype)
 %denormalize camera matrix
 M = T\P_normalized*U;
 
-%factorize camera matrix in to K, R and C
-if(Dtype == 'QR')
-    [ K, R, C ] = decomposeQR(M);
-elseif(Dtype=='EXP')
-    [ K, R, C ] = decomposeEXP(M);
-else
-    error('Incompatible decomposition method'); 
-end
+%factorize camera matrix in to K, R and t
 
 %compute reprojection error
 
