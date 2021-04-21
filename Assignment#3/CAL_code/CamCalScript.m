@@ -23,7 +23,7 @@ XYZ=dlmread('XYZ.txt')
 
 % === Task 2 DLT algorithm ===
 
-%[K, R, t, error] = runDLT(xy, XYZ, D_type);
+[K, R, t, error] = runDLT(xy, XYZ, D_type);
 
 % === Task 3 Gold algorithm ===
 

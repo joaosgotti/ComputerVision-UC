@@ -1,4 +1,4 @@
-function [K, R, t, error] = runDLT(xy, XYZ)
+function [K, R, t, error] = runDLT(xy, XYZ, Dtype)
 
 %normalize data points
 xy_normalized = xy/abs(xy);
