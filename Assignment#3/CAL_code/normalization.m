@@ -16,7 +16,7 @@ function [xyn, XYZn, T, U] = normalization(xy, XYZ)
     X = XYZ(1,:); Y = XYZ(2,:); Z = XYZ(3,:);
     CX = mean(X); CY = mean(Y); CZ = mean(Z);
    
-    s3d = sqrt(3)*N/sum( sqrt(    (X-CX).^2   +   (Y-CY).^2   +   (Z-CZ).^2      ),'all' );
+    s3d = sqrt(3)*N/sum(sqrt((X-CX).^2+(Y-CY).^2+(Z-CZ).^2),'all' );
           
     U = inv([s3d 0  0  CX
               0 s3d 0  CY

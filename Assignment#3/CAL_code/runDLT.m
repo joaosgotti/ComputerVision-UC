@@ -1,4 +1,4 @@
-function [K, R, t, error] = runDLT(xy, XYZ, Dtype)
+function [K, R, C, error] = runDLT(xy, XYZ, Dtype)
 
 [xy_normalized, XYZ_normalized, T, U] =normalization(xy, XYZ);
 

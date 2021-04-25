@@ -2,7 +2,6 @@ function [P] = dlt(xy, XYZ)
 %computes DLT, xy and XYZ should be normalized before calling this function
 A=[];
 
-
 for i=1:length(xy)
 	A = [A;
         XYZ(:,i)', [0 0 0 0], -xy(1,i)*(XYZ(:,i)')
