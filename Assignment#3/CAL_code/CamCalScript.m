@@ -3,9 +3,12 @@ clear all, clc, close all;
 IMG_NAME = 'images/image001.jpg';
 img_I = imread(IMG_NAME);
 image(img_I);
+hold on
 %axis off
 axis image
 
+xy=dlmread('xy.txt');
+XYZ=dlmread('XYZ.txt');
 % Decomposition Approach
 D_type = 'QR';
 %D_type = 'EXP';
@@ -18,19 +21,18 @@ D_type = 'QR';
 %point.
 %You don't have to do this all the time, just store the resulting xy and
 %XYZ matrices and use them as input for your algorithms.
-load('xy.mat');
-load('XYZ.mat');
+
 
 % === Task 2 DLT algorithm ===
-%[K, R, C, error] = runDLT(xy, XYZ, D_type);
+[K, R, C, error_DLT] = runDLT(xy, XYZ, D_type);
 
 % === Task 3 Gold algorithm ===
 
-[K, R, t, error] = runGold(xy, XYZ, D_type);
+[K, R, t, error_GOLD] = runGold(xy, XYZ, D_type);
 
 % === Task 4 Gold algorithm with radial distortion estimation ===
 
-%[K, R, t, Kd, error] = runGoldRadial(xy, XYZ, D_type);
+[K, R, t, Kd, error] = runGoldRadial(xy, XYZ, D_type);
 
 % === Bonus: Undistort input Image ===
 

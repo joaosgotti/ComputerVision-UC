@@ -1,4 +1,4 @@
-function [K, R, C, error] = runDLT(xy, XYZ, Dtype)
+function [K, R, C, error_DLT] = runDLT(xy, XYZ, Dtype)
 
 [xy_normalized, XYZ_normalized, T, U] =normalization(xy, XYZ);
 
@@ -33,8 +33,10 @@ plot(ximg,yimg,'o')
 hold on
 plot(xest,yest,'rx')
 hold on
-reprojection_error=0
+reprojection_error=0;
 for i=1:tamanho
 D=(sqrt((xest(i)-ximg(i))^2+(yest(i)-yimg(i))^2))^2;
-reprojection_error=reprojection_error+D
+reprojection_error=reprojection_error+D;
+end
+error_DLT=reprojection_error;
 end

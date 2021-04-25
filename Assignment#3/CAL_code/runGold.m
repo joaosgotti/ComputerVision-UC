@@ -1,4 +1,4 @@
-function [K, R, C, error] = runGold(xy, XYZ, Dtype)
+function [K, R, C, error_GOLD] = runGold(xy, XYZ, Dtype)
 
 %normalize data points
 [xy_normalized, XYZ_normalized, T, U] = normalization(xy, XYZ);
@@ -28,6 +28,6 @@ end
 %compute reprojection error
 new = P*[XYZ;ones(1,length(XYZ))];
 new = new./new(3,:);
-error = mean((xy(1,:) - new(1,:)).^2+(xy(2,:) - new(2,:)).^2,'all'); %% REDO
+error_GOLD = mean((xy(1,:) - new(1,:)).^2+(xy(2,:) - new(2,:)).^2,'all'); %% REDO
 
 end
