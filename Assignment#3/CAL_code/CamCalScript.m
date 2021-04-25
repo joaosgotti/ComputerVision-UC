@@ -32,7 +32,7 @@ D_type = 'QR';
 
 % === Task 4 Gold algorithm with radial distortion estimation ===
 
-[K, R, t, Kd, error] = runGoldRadial(xy, XYZ, D_type);
+[K, R, t, Kd, error_GOLDRADIAL] = runGoldRadial(xy, XYZ, D_type);
 
 % === Bonus: Undistort input Image ===
 

@@ -1,4 +1,4 @@
-function [K, R, C, Kd, error] = runGoldRadial(xy, XYZ, Dtype)
+function [K, R, t, Kd, error] = runGoldRadial(xy, XYZ, Dtype)
 
 %normalize data points
 [xy_normalized ,XYZ_normalized,T,U] = normalization(xy,XYZ);
@@ -11,13 +11,14 @@ pn = [P_normalized(1,:) P_normalized(2,:) P_normalized(3,:) 0 0];
 
 [pn] = fminsearch(@fminGoldRadial, pn, [], xy_normalized, XYZ_normalized);
 
-Kd = pn(13:14);
+k = pn(13:14);
 
-P_normalized = [pn(1:4);pn(5:8);pn(9:12)];
-
+P_normalized = [pn(1:4)
+                pn(5:8)
+                pn(9:12)];
 
 %denormalize camera matrix
-P = T\P_normalized*U
+P = T\P_normalized
 %factorize camera matrix in to K, R and t
 if(strcmp(Dtype,'QR'))
     [ K, R, C ] = decomposeQR(P);
