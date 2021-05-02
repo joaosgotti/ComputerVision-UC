@@ -1,7 +1,7 @@
 clc,clear;
 
-datadir     = '../datasets/yosemite';%the directory containing the images
-resultsdir  = '../results/yosemite/';%the directory for dumping results
+datadir     = '../datasets/bikes';%the directory containing the images
+resultsdir  = '../results/bikes/';%the directory for dumping results
 
 
 sigma_d  = 1;
@@ -81,10 +81,10 @@ if size(Dscrpt1.keyPoints,1) > Min_Query_features
     outp = markMatch(MatchList,img1C,img2C,'horizontal',false);
     imwrite(outp,dir);
     
-%     %Benchmark Evaluation
-%     H=load(strcat(list(i-1).folder,'/',list(i-1).name));
-%     [TP,FN,FP,TN]=Matching_accuracy(MatchList,H,Tresh_Match);
-%     Accuracy=(TP+TN)/(size(Dscpt1,1));
+% %     %Benchmark Evaluation
+%     %H=load(strcat(list.folder,'/',list.name))
+%     [TP,FN,FP,TN]=Matching_accuracy(MatchList,Tresh_Match);
+%     Accuracy=(TP+TN)/(size(Dscrpt1,1));
 %     sprintf("Matching Accuracy between images %s and %s is = %f \n",imgname1,imgname2,Accuracy);
     
     
