@@ -1,0 +1,18 @@
+Pontos 81
+Certos 76
+Errados 5
+
+sigma_d  = 1;
+sigma_i  = 2 ;  
+Tresh_R = 0.1;
+NMS_size = 21;
+Patchsize  = 41;
+Tresh_Metric = 0.3;       
+Tresh_Match = 0.01;         
+Descriptor_type  = 'MOPS';
+Metric_type = 'RATIO';
+
+
+
+
+Grandes variações de iluminação atrapalham muito na detecção e no matching dos valores

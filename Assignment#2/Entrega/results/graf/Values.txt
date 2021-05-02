@@ -1,0 +1,3 @@
+Fracasso total em todos os sentidos
+
+Algoritmo não se demonstrou muito eficiente em rotações em um plano não paralelo a camera

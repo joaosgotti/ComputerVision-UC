@@ -1,0 +1,13 @@
+Pontos - 30
+Certos - 24
+Errados - 6
+
+sigma_d  = 1;
+sigma_i  = 2 ;  
+Tresh_R = 0.1;
+NMS_size = 21;
+Patchsize  = 41;
+Tresh_Metric = 0.45;       
+Tresh_Match = 0.01;         
+Descriptor_type  = 'MOPS';
+Metric_type = 'RATIO';
