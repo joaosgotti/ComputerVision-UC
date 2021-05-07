@@ -2,7 +2,7 @@ function [imgOUT] = NMS(imgIN,threshold,type,NMSsize)
 %0 - gradient NMS
 %1 - neighbors NMS - default
 
-if nargin < 1
+if nargin < 1 %quantidade de parametros da funcao
     error('Error. \nNot enough inputs.');
 elseif nargin == 1
     warning('Calling this function without threshold can take a while.');
@@ -64,7 +64,7 @@ for index = 1:sizeRow
         else
             temp = imgP;
             temp(2,2) = 0;
-            if imgP(2,2) > max(temp)
+            if factor > max(temp,[],'all')
                 imgOUT(Frow(index),Fcol(index)) = factor;
             end
         end
@@ -72,7 +72,7 @@ for index = 1:sizeRow
         imgP(1:NMSsize,1:NMSsize) = padIMG(Frow(index):Frow(index)+(NMSsize-1),Fcol(index):Fcol(index)+(NMSsize-1));
         temp = imgP;
         temp(centerIndex,centerIndex) = 0;
-        if imgP(centerIndex,centerIndex) > max(temp)
+        if imgP(centerIndex,centerIndex) > max(temp,[],'all')
             imgOUT(Frow(index),Fcol(index)) = 1;
         end
     end

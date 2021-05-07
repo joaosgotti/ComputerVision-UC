@@ -32,5 +32,5 @@ end
 end
 
 function d = distance(x,y,itheta)
-    d = (x*co(itheta) + y*si(itheta));
+    d = (x*cos(itheta) + y*sin(itheta));
 end
